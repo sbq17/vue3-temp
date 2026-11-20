@@ -1,9 +1,12 @@
 {
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "always",
 		"source.fixAll.prettier": "always",
 		"source.fixAll.ts": "always"
 	},
+	"eslint.debug": true,
 	"eslint.validate": [
 		"javascript",
 		"javascriptreact",

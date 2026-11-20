@@ -9,50 +9,64 @@ import { defineConfig } from 'eslint/config'
 import prettier from 'eslint-config-prettier/flat'
 
 export default defineConfig([
-	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
-		plugins: { js },
-		extends: ['js/recommended'],
-		languageOptions: { globals: globals.browser }
-	},
-	tseslint.configs.recommended,
-	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
-		extends: [pluginVue.configs['flat/essential']]
-	},
-	{
-		files: ['**/*.vue'],
-		languageOptions: { parserOptions: { parser: tseslint.parser } }
-	},
-	{
-		files: ['**/*.json'],
-		plugins: { json },
-		language: 'json/json',
-		extends: ['json/recommended']
-	},
-	{
-		files: ['**/*.jsonc'],
-		plugins: { json },
-		language: 'json/jsonc',
-		extends: ['json/recommended']
-	},
-	{
-		files: ['**/*.json5'],
-		plugins: { json },
-		language: 'json/json5',
-		extends: ['json/recommended']
-	},
-	{
-		files: ['**/*.md'],
-		plugins: { markdown },
-		language: 'markdown/gfm',
-		extends: ['markdown/recommended']
-	},
-	{
-		files: ['**/*.css'],
-		plugins: { css },
-		language: 'css/css',
-		extends: ['css/recommended']
-	},
-	prettier
+  {
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    languageOptions: {
+      globals: globals.browser
+    },
+    rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          disallowTypeAnnotations: true,
+          fixStyle: 'separate-type-imports'
+        }
+      ]
+    }
+  },
+  tseslint.configs.recommended,
+  {
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
+    extends: [pluginVue.configs['flat/essential']]
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: { parser: tseslint.parser }
+    }
+  },
+  {
+    files: ['**/*.json'],
+    plugins: { json },
+    language: 'json/json',
+    extends: ['json/recommended']
+  },
+  {
+    files: ['**/*.jsonc'],
+    plugins: { json },
+    language: 'json/jsonc',
+    extends: ['json/recommended']
+  },
+  {
+    files: ['**/*.json5'],
+    plugins: { json },
+    language: 'json/json5',
+    extends: ['json/recommended']
+  },
+  {
+    files: ['**/*.md'],
+    plugins: { markdown },
+    language: 'markdown/gfm',
+    extends: ['markdown/recommended']
+  },
+  {
+    files: ['**/*.css'],
+    plugins: { css },
+    language: 'css/css',
+    extends: ['css/recommended']
+  },
+  prettier
 ])
