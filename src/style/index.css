@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+html,
+body {
+	@apply w-full h-full overflow-auto;
+
+	& #app {
+		@apply w-full h-full;
+	}
+}

@@ -1,7 +1,7 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld />
+	<div class="text-amber-500">123</div>
 </template>
+
+<script setup lang="ts">
+//
+</script>
