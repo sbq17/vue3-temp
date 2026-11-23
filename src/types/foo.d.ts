@@ -1,1 +1,1 @@
-export type Foo = string
+export declare type Foo = string
