@@ -5,3 +5,5 @@ import './style/index.css'
 const app = createApp(App)
 
 app.mount('#app')
+
+console.log(pickStyle('--a: '))

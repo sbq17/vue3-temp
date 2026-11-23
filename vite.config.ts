@@ -13,6 +13,7 @@ export default defineConfig({
       eslintrc: {
         enabled: true
       },
+      dirs: ['./src/utils/', './src/constant/'],
       dts: 'types/auto-import.d.ts'
     }),
     Components({

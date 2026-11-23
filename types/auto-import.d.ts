@@ -8,6 +8,7 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const CSS_NUM_MAP: typeof import('../src/constant/index').CSS_NUM_MAP
   const EffectScope: typeof import('vue').EffectScope
   const acceptHMRUpdate: typeof import('pinia').acceptHMRUpdate
   const computed: typeof import('vue').computed
@@ -52,6 +53,10 @@ declare global {
   const onUnmounted: typeof import('vue').onUnmounted
   const onUpdated: typeof import('vue').onUpdated
   const onWatcherCleanup: typeof import('vue').onWatcherCleanup
+  const pickClassName: typeof import('../src/utils/css').pickClassName
+  const pickCssNum2StrInSpecialKeys: typeof import('../src/utils/css').pickCssNum2StrInSpecialKeys
+  const pickCssNumber2StrInSpecialKeys: typeof import('../src/utils/css').pickCssNumber2StrInSpecialKeys
+  const pickStyle: typeof import('../src/utils/css').pickStyle
   const provide: typeof import('vue').provide
   const reactive: typeof import('vue').reactive
   const readonly: typeof import('vue').readonly
