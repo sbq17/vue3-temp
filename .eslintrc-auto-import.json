@@ -1,5 +1,6 @@
 {
   "globals": {
+    "Arg": true,
     "CSS_NUM_MAP": true,
     "Component": true,
     "ComponentPublicInstance": true,
@@ -64,6 +65,7 @@
     "onWatcherCleanup": true,
     "pickClassName": true,
     "pickCssNum2StrInSpecialKeys": true,
+    "pickProperty": true,
     "pickStyle": true,
     "provide": true,
     "reactive": true,

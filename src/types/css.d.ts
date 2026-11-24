@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { CSSProperties } from 'vue'
 
 export declare type ClassType =
@@ -19,3 +20,25 @@ export declare type StyleNumberKey =
   | 'min-height'
   | 'maxHeight'
   | 'max-height'
+
+export declare type CssType = {
+  class?: ClassVo
+  style?: StyleVo
+}
+
+export declare type CssTypeWidthFn<Option = any> = {
+  [K in keyof CssType]?: CssType[K] | ((option: Option) => CssType[K])
+}
+
+type WidthHeightType = {
+  [
+  K in StyleNumberKey as K extends `${infer P}-${infer Q}`
+  ? `${P}${Capitalize<Q>}`
+  : K
+  ]?: number | string
+}
+
+type WidthHeightWithFn<Option = any> = {
+  [K in keyof WidthHeightType]:
+  WidthHeightType[K] | ((option: Option) => WidthHeightType[K])
+}
