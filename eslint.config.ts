@@ -30,7 +30,17 @@ export default defineConfig([
   tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
-    extends: [pluginVue.configs['flat/essential']]
+    extends: [pluginVue.configs['flat/essential']],
+    rules: {
+      'vue/html-closing-bracket-newline': [
+        'error',
+        {
+          singleline: 'never',
+          multiline: 'always',
+          selfClosingTag: { singleline: 'never', multiline: 'always' }
+        }
+      ]
+    }
   },
   {
     files: ['**/*.vue'],

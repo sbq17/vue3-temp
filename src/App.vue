@@ -4,7 +4,7 @@
 
 		<component :is="renderBtn"></component>
 
-		<EpBtn></EpBtn>
+		<EpBtn> </EpBtn>
 	</div>
 </template>
 
