@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAppInfo } from '@/useAppInfo'
+import { useAppInfo } from './useAppInfo'
 
 const { renderBtn } = useAppInfo()
 </script>

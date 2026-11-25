@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { CSSProperties } from 'vue'
 
 export declare type ClassType =
   string | Record<string, boolean> | null | undefined

@@ -4,13 +4,23 @@ import { defineConfig } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { fileURLToPath } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue', 'vue-router', 'pinia'],
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        {
+          from: 'vue',
+          imports: ['VNodeProps', 'VNodeChild', 'Raw', 'CSSProperties'],
+          type: true
+        }
+      ],
       eslintrc: {
         enabled: true
       },
@@ -32,7 +42,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': './src'
+      '@': fileURLToPath(new URL('./src/', import.meta.url))
     }
   }
 })

@@ -12,6 +12,8 @@ declare global {
   const CSS_NUM_MAP: typeof import('../src/constant/index').CSS_NUM_MAP
   const EffectScope: typeof import('vue').EffectScope
   const O: typeof import('../src/utils/pick.property').O
+  const VNodeChild: typeof import('vue').VNodeChild
+  const VNodeProps: typeof import('vue').VNodeProps
   const acceptHMRUpdate: typeof import('pinia').acceptHMRUpdate
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
@@ -95,6 +97,6 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, ShallowRef, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
+  export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, ShallowRef, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef, VNodeProps, VNodeChild, Raw, CSSProperties } from 'vue'
   import('vue')
 }

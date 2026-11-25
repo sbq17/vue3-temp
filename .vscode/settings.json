@@ -14,7 +14,7 @@
 		"typescriptreact"
 	],
 	"prettier.configPath": "./.prettierrc",
-	// "js/ts.preferences.importModuleSpecifier": "non-relative",
+	"js/ts.preferences.importModuleSpecifier": "shortest",
 	"js/ts.suggest.autoImports": true,
 	"js/ts.preferences.importModuleSpecifierEnding": "minimal",
 	"js/ts.updateImportsOnFileMove.enabled": "always",

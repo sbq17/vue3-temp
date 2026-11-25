@@ -1,6 +1,7 @@
 {
   "globals": {
     "Arg": true,
+    "CSSProperties": true,
     "CSS_NUM_MAP": true,
     "Component": true,
     "ComponentPublicInstance": true,
@@ -14,11 +15,14 @@
     "MaybeRef": true,
     "MaybeRefOrGetter": true,
     "PropType": true,
+    "Raw": true,
     "Ref": true,
     "ShallowRef": true,
     "Slot": true,
     "Slots": true,
     "VNode": true,
+    "VNodeChild": true,
+    "VNodeProps": true,
     "WritableComputedRef": true,
     "acceptHMRUpdate": true,
     "computed": true,

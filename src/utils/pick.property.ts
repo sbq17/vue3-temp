@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * 条件类型：若 T 是 (option: O) => 某类型，则结果为该类型，否则为 T 本身
  */
