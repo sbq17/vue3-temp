@@ -1,7 +1,7 @@
 export declare type BtnSlotKey = 'default' | 'loading' | 'icon'
 
 /**
- * 编写一个通用AddSlot<SlotKeys, OptionData>
+ * 编写一个通用SlotAppend<SlotKeys, OptionData>
  *
  * {
  *

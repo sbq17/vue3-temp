@@ -7,10 +7,19 @@ export declare type OnEvent<Events extends Record<string, any>> = {
 }
 
 /**
- * 通用 AddSlot 类型
+ * 通用 SlotAppend 类型
  * @param SlotKeys - 插槽名称的联合类型（如 'default' | 'loading'）
  * @param OptionData - 插槽函数接收的参数类型
  */
-export declare type AddSlot<SlotKeys extends string, OptionData> = {
+export declare type SlotMap<SlotKeys extends string, OptionData> = {
+  [K in SlotKeys]?: (option: OptionData) => VNodeChild
+}
+
+/**
+ * 通用 SlotAppend 类型
+ * @param SlotKeys - 插槽名称的联合类型（如 'default' | 'loading'）
+ * @param OptionData - 插槽函数接收的参数类型
+ */
+export declare type SlotAppend<SlotKeys extends string, OptionData> = {
   [K in SlotKeys as `${K}Slot`]?: (option: OptionData) => VNodeChild
 }

@@ -1,0 +1,9 @@
+.el-button {
+	&.el-button {
+		@apply p-0 px-2 flex items-center justify-center;
+	}
+
+	&.el-button + .el-button {
+		margin-left: 8px;
+	}
+}

@@ -91,3 +91,59 @@ export const pickCssNum2StrInSpecialKeys = (
     return { [has]: typeof value === 'number' ? value + 'px' : value }
   }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const pickCss = <ClassOption = any, StyleOption = any>(option?: {
+  class?: ClassVo | ClassVo[] | ((option: ClassOption) => ClassVo[] | ClassVo)
+  classOption?: ClassOption
+  style?: StyleVo | ((option: StyleOption) => StyleVo[] | StyleVo)
+  styleOption?: StyleOption
+}) => {
+  const {
+    class: classList = [],
+    classOption,
+    style = [],
+    styleOption
+  } = option || {}
+
+  let className: ClassVo[] | ClassVo = []
+
+  if (typeof classList === 'function') {
+    const foo = classList(classOption! || ({} as ClassOption))
+
+    if (foo instanceof Array) {
+      className = foo
+    } else {
+      className.push(foo)
+    }
+  } else {
+    if (classList instanceof Array) {
+      className = classList
+    } else {
+      className.push(classList)
+    }
+  }
+
+  let styles: StyleVo[] = []
+
+  if (typeof style === 'function') {
+    const foo = style(styleOption! || ({} as StyleOption))
+
+    if (foo instanceof Array) {
+      styles = foo
+    } else {
+      styles.push(foo)
+    }
+  } else {
+    if (style instanceof Array) {
+      styles = style
+    } else {
+      styles.push(style)
+    }
+  }
+
+  return {
+    class: pickClassName(...className),
+    style: pickStyle(...styles)
+  }
+}

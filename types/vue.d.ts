@@ -3,6 +3,8 @@ import type { CssType } from '../src/types'
 import '@vue/runtime-dom'
 
 declare module '@vue/runtime-dom' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface VNodeProps extends CssType { }
+  interface VNodeProps extends CssType {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ref?: (el: any) => void
+  }
 }

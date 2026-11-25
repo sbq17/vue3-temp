@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { AddSlot, BtnSlotKey, OnEvent } from '@/types'
+import type { SlotAppend, BtnSlotKey, CssTypeWithFn, OnEvent } from '@/types'
 import type { ButtonInstance, ButtonProps } from 'element-plus'
 
 export declare type EpBtnParams = {
-  btn: EpBtnProps
-  btnRef: ButtonInstance
-  domInstance?: HTMLDivElement
+  btn: EpBtnItem
+  btnInstance?: ButtonInstance
 }
 
 export declare type EpBtnEmit<OtherAttrs = Record<string, any>> = {
@@ -16,10 +15,12 @@ export interface EpBtnItem<OtherAttrs = Record<string, any>>
   extends
   ButtonProps,
   OnEvent<EpBtnEmit<OtherAttrs>>,
-  AddSlot<BtnSlotKey, EpBtnParams> {
+  SlotAppend<BtnSlotKey, EpBtnParams>,
+  CssTypeWithFn<EpBtnParams> {
   disabled?: boolean | ((option: EpBtnParams) => boolean | undefined)
   loading?: boolean | ((option: EpBtnParams) => boolean | undefined)
   label?: string | ((options: EpBtnParams) => VNodeChild)
+  show?: boolean | ((option: EpBtnParams) => boolean | undefined)
 }
 
 type PickProperty<T, Arg> = T extends (arg: Arg) => infer R ? R : T
@@ -40,5 +41,5 @@ export interface EpBtnProps {
   /**
    * 渲染按钮配置
    */
-  item?: EpBtnItem[] | EpBtnItem
+  item?: EpBtnItem<any>[] | EpBtnItem<any>
 }

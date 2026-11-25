@@ -25,7 +25,7 @@ export declare type CssType = {
   style?: StyleVo
 }
 
-export declare type CssTypeWidthFn<Option = any> = {
+export declare type CssTypeWithFn<Option = any> = {
   [K in keyof CssType]?: CssType[K] | ((option: Option) => CssType[K])
 }
 
