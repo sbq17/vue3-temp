@@ -11,9 +11,6 @@ declare global {
   const Arg: typeof import('../src/utils/pick.property').Arg
   const CSS_NUM_MAP: typeof import('../src/constant/index').CSS_NUM_MAP
   const EffectScope: typeof import('vue').EffectScope
-  const O: typeof import('../src/utils/pick.property').O
-  const VNodeChild: typeof import('vue').VNodeChild
-  const VNodeProps: typeof import('vue').VNodeProps
   const acceptHMRUpdate: typeof import('pinia').acceptHMRUpdate
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
@@ -59,7 +56,6 @@ declare global {
   const onWatcherCleanup: typeof import('vue').onWatcherCleanup
   const pickClassName: typeof import('../src/utils/css').pickClassName
   const pickCssNum2StrInSpecialKeys: typeof import('../src/utils/css').pickCssNum2StrInSpecialKeys
-  const pickCssNumber2StrInSpecialKeys: typeof import('../src/utils/css').pickCssNumber2StrInSpecialKeys
   const pickProperty: typeof import('../src/utils/pick.property').pickProperty
   const pickStyle: typeof import('../src/utils/css').pickStyle
   const provide: typeof import('vue').provide

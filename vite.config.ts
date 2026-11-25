@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { fileURLToPath } from 'node:url'
+import { deleteUnpluginFile } from './plugin/delete.import.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -25,14 +26,18 @@ export default defineConfig({
         enabled: true
       },
       resolvers: [ElementPlusResolver()],
-      dirs: ['./src/utils/', './src/constant/'],
+      dirs: ['src/utils/', 'src/constant/'],
       dts: 'types/auto-import.d.ts'
     }),
     Components({
       resolvers: [ElementPlusResolver()],
-      dirs: ['src/components/index.(ts|tsx|js|jsx|vue)'],
+      globs: [
+        'src/packages/*.(ts|tsx|js|jsx|vue)',
+        'src/packages/*/index.(ts|tsx|js|jsx|vue)'
+      ],
       dts: 'types/components.d.ts'
-    })
+    }),
+    deleteUnpluginFile()
   ],
   server: {
     host: true,
