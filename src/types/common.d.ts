@@ -23,3 +23,9 @@ export declare type SlotMap<SlotKeys extends string, OptionData> = {
 export declare type SlotAppend<SlotKeys extends string, OptionData> = {
   [K in SlotKeys as `${K}Slot`]?: (option: OptionData) => VNodeChild
 }
+
+export declare type SimpleRow = Record<string, any>
+
+export declare type Expand<T> = T extends infer O
+  ? { [K in keyof O]: O[K] }
+  : never

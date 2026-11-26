@@ -1,3 +1,5 @@
+import type { Expand } from '@/types'
+import type CssTypeWithFn from '@/types'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export declare type ClassType =
@@ -41,3 +43,12 @@ type WidthHeightWithFn<Option = any> = {
   [K in keyof WidthHeightType]:
   WidthHeightType[K] | ((option: Option) => WidthHeightType[K])
 }
+
+export declare type CssTypeAppendWithFn<
+  Append extends string = string,
+  Option = any
+> = Expand<{
+  [
+  K in keyof CssTypeWithFn<Option> as `${Append}${Capitalize<K>}`
+  ]: CssTypeWithFn<Option>[K]
+}>

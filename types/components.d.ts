@@ -13,5 +13,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     EpBtn: typeof import('./../src/packages/EpBtn/index.ts')['default']
     EpBtnGroup: typeof import('./../src/packages/EpBtnGroup/index.ts')['default']
+    LtTable: typeof import('./../src/packages/LtTable/index.ts')['default']
   }
 }
